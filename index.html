@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Huang Kai | PhD at TUM</title>
-<meta name="description" content="Kai Huang @ TUM. Huang Kai is a PhD researcher at Technical University of Munich (TUM), working on large language models for automated program repair and multimodal software engineering.">
+<meta name="description" content="Huang Kai is a PhD researcher at Technical University of Munich (TUM), working on large language models for automated program repair and multimodal software engineering.">
 <meta name="keywords" content="Huang Kai, TUM, Technical University of Munich, LLM4APR, automated program repair, multimodal software engineering">
 <meta name="author" content="Huang Kai">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -442,6 +442,22 @@
   .work-title {
     font-size: 14px; font-weight: 400; color: #fff; line-height: 1.4;
   }
+  .work-badge {
+    position: absolute;
+    top: 1rem; right: 1rem;
+    display: inline-flex; align-items: center; gap: 5px;
+    font-family: 'DM Mono', monospace;
+    font-size: 10px; letter-spacing: 0.08em;
+    padding: 4px 10px;
+    background: rgba(255,90,0,0.6);
+    color: #fff;
+    border-radius: 2px;
+    z-index: 2;
+  }
+  .work-badge::before {
+    content: '★';
+    font-size: 9px;
+  }
 
   /* ── TALKS ── */
   #talks { background: var(--paper2); }
@@ -492,6 +508,40 @@
   }
   .award-highlight .award-name { color: var(--gold); }
   .award-highlight { border-top: 2px solid var(--gold); }
+
+  /* ── MENTORING ── */
+  #mentoring { background: var(--paper); }
+  .mentoring-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+  }
+  .mentee-card {
+    background: var(--paper2);
+    padding: 1.75rem;
+    border-top: 2px solid transparent;
+    transition: border-color 0.2s;
+    text-decoration: none;
+    display: block;
+  }
+  .mentee-card:hover { border-top-color: var(--accent2); }
+  .mentee-degree {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--accent2); margin-bottom: 0.75rem;
+  }
+  .mentee-name {
+    font-size: 15px; font-weight: 400; color: var(--ink);
+    margin-bottom: 0.4rem;
+  }
+  .mentee-role {
+    font-size: 13px; color: var(--ink2);
+    margin-bottom: 0.25rem; line-height: 1.5;
+  }
+  .mentee-org {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px; color: var(--ink3);
+    letter-spacing: 0.05em;
+  }
 
   /* ── SERVICE ── */
   #service { background: var(--paper2); }
@@ -576,6 +626,7 @@
     <li><a href="#publications">Publications</a></li>
     <li><a href="#works">Works</a></li>
     <li><a href="#awards">Awards</a></li>
+    <li><a href="#mentoring">Students</a></li>
     <li><a href="#service">Service</a></li>
   </ul>
 </nav>
@@ -620,7 +671,7 @@
       <div class="stat-pill">
         <span class="stat-pill-num">2x</span>
         <div class="stat-pill-divider"></div>
-        <span class="stat-pill-label">ACM SIGSOFT<br>Distinguished</span>
+        <a class="stat-pill-label">ACM SIGSOFT<br>Distinguished</a>
       </div>
       <div class="stat-pill">
         <span class="stat-pill-num">1x</span>
@@ -804,20 +855,22 @@
       <div class="section-line"></div>
     </div>
     <div class="works-grid">
-      <div class="work-card">
-        <img src="ASE23.jpg" alt="Conference presentation" onerror="this.style.background='var(--paper3)'; this.style.display='block'; this.src=''">
+      <a class="work-card" href="https://conf.researchr.org/home/ase-2023" target="_blank">
+        <img src="ASE23.jpg" href="" alt="ASE23 Conference presentation" onerror="this.style.background='var(--paper3)'; this.style.display='block'; this.src=''">
         <div class="work-overlay">
           <p class="work-tag">ASE 2023 · Luxembourg</p>
+          <span class="work-badge">TOP-1/10 Distinguished Paper</span>
           <p class="work-title">Distinguished Paper Presentation — Fine-tuning LLM for APR</p>
         </div>
-      </div>
-      <div class="work-card">
-        <img src="PPT.png" alt="Seeing is Fixing" onerror="this.style.background='#1a1a2e'; this.style.display='block'; this.src=''">
+      </a>
+      <a class="work-card" href="https://conf.researchr.org/track/ase-2025/ase-2025-papers#event-overview" target="_blank">
+        <img src="_O6A3584.JPG" alt="ASE25 Conference presentation" onerror="this.style.background='#1a1a2e'; this.style.display='block'; this.src=''">
         <div class="work-overlay">
           <p class="work-tag">ASE 2025 · Seoul</p>
+          <span class="work-badge">TOP-1/21 Distinguished Paper</span>
           <p class="work-title">Distinguished Paper Presentation — Visual Reasoning for APR</p>
         </div>
-      </div>
+      </a>
     </div>
   </div>
 </section>
@@ -836,21 +889,21 @@
           <p class="talk-org">JetBrains Research</p>
           <p class="talk-title">Multimodal LLMs for Visual Software Issue Repair</p>
         </div>
-        <a href="#" class="talk-link">View ↗</a>
+        <a href="https://www.jetbrains.com/research/" class="talk-link">View ↗</a>
       </div>
       <div class="talk-item">
         <div>
           <p class="talk-org">Moonshot AI</p>
           <p class="talk-title">Seeing is Fixing: Cross-Modal Reasoning with Multimodal LLMs for Visual Software Issue Repair</p>
         </div>
-        <a href="#" class="talk-link">View ↗</a>
+        <a href="https://www.moonshot.ai/" class="talk-link">View ↗</a>
       </div>
       <div class="talk-item">
         <div>
           <p class="talk-org">TruX @ University of Luxembourg</p>
           <p class="talk-title">Fine-tuning Large Language Models of Code for Automated Program Repair</p>
         </div>
-        <a href="#" class="talk-link">View ↗</a>
+        <a href="https://www.uni.lu/snt-en/research-groups/trux/" class="talk-link">View ↗</a>
       </div>
     </div>
   </div>
@@ -899,11 +952,46 @@
   </div>
 </section>
 
+<!-- MENTORING -->
+<section id="mentoring">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-num">06</span>
+      <h2 class="section-title">Mentoring</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="mentoring-grid">
+
+      <a class="mentee-card" href="https://arxiv.org/abs/2506.23100" target="_blank">
+        <p class="mentee-degree">Research Paper - Repair Ingredients</p>
+        <p class="mentee-name">Jaiyi Zhang</p>
+        <p class="mentee-role">PhD Student</p>
+        <p class="mentee-org">PhD at NTU</p>
+      </a>
+
+      <div class="mentee-card">
+        <p class="mentee-degree">MS Thesis - Visual Software Repair</p>
+        <p class="mentee-name">Hande Sena Yilmaz</p>
+        <p class="mentee-role">Master Student</p>
+        <p class="mentee-org">Master at TU Munich</p>
+      </div>
+
+      <div class="mentee-card">
+        <p class="mentee-degree">MS Thesis - Web Accessibility Repair</p>
+        <p class="mentee-name">Ling Zhu</p>
+        <p class="mentee-role">Working on BMW Group</p>
+        <p class="mentee-org">Master at TU Munich</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <!-- SERVICE -->
 <section id="service">
   <div class="container">
     <div class="section-header">
-      <span class="section-num">06</span>
+      <span class="section-num">07</span>
       <h2 class="section-title">Service</h2>
       <div class="section-line"></div>
     </div>
