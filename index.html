@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Huang Kai | PhD at TUM</title>
-<meta name="description" content="Huang Kai is a PhD researcher at Technical University of Munich (TUM), working on large language models for automated program repair and multimodal software engineering.">
-<meta name="keywords" content="Huang Kai, TUM, Technical University of Munich, LLM4APR, automated program repair, multimodal software engineering">
+<meta name="description" content="Huang Kai is a PhD researcher at Technical University of Munich (TUM), working on large language models for automated program repair, multimodal software engineering, and web accessibility repair.">
+<meta name="keywords" content="Huang Kai, TUM, Technical University of Munich, LLM4APR, automated program repair, multimodal software engineering, web accessibility, A11YRepair, GUIRepair">
 <meta name="author" content="Huang Kai">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -359,6 +359,29 @@
   }
   .about-text a { color: var(--accent2); text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 0.2s; }
   .about-text a:hover { border-bottom-color: var(--accent2); }
+  .milestones {
+    list-style: none;
+    margin: 0 0 1.4rem 0.25rem;
+    border-left: 1px solid var(--paper3);
+  }
+  .milestones li {
+    position: relative;
+    padding: 0 0 1rem 1.5rem;
+    font-size: 15px; color: var(--ink2); line-height: 1.85;
+  }
+  .milestones li:last-child { padding-bottom: 0; }
+  .milestones li::before {
+    content: '';
+    position: absolute; left: -4px; top: 0.72em;
+    width: 7px; height: 7px; border-radius: 50%;
+    background: var(--gold);
+  }
+  .milestone-year {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px; letter-spacing: 0.1em;
+    color: var(--gold); margin-right: 0.5rem;
+  }
+  .milestone-award { color: var(--gold); font-weight: 400; }
   .highlight-box {
     margin-top: 2rem; padding: 1.25rem 1.5rem;
     background: var(--gold-light);
@@ -387,6 +410,8 @@
     font-size: 15px; font-weight: 400; color: var(--ink);
     margin-bottom: 0.4rem; line-height: 1.5;
   }
+  .pub-title a { color: inherit; text-decoration: none; transition: color 0.2s; }
+  .pub-title a:hover { color: var(--accent2); }
   .pub-authors {
     font-size: 13px; color: var(--ink3);
     margin-bottom: 0.5rem; line-height: 1.5;
@@ -417,7 +442,7 @@
   /* ── WORKS ── */
   #works { background: var(--paper); }
   .works-grid {
-    display: grid; grid-template-columns: 1fr 1fr;
+    display: grid; grid-template-columns: repeat(3, 1fr);
     gap: 2px;
   }
   .work-card {
@@ -486,10 +511,11 @@
   /* ── AWARDS ── */
   #awards { background: var(--paper); }
   .awards-grid {
-    display: grid; grid-template-columns: repeat(3, 1fr);
+    display: grid; grid-template-columns: repeat(12, 1fr);
     gap: 2px;
   }
   .award-item {
+    grid-column: span 3;
     background: var(--paper2);
     padding: 1.75rem;
   }
@@ -507,7 +533,7 @@
     letter-spacing: 0.05em;
   }
   .award-highlight .award-name { color: var(--gold); }
-  .award-highlight { border-top: 2px solid var(--gold); }
+  .award-highlight { grid-column: span 4; border-top: 2px solid var(--gold); }
 
   /* ── MENTORING ── */
   #mentoring { background: var(--paper); }
@@ -610,6 +636,8 @@
     .about-grid { grid-template-columns: 1fr; gap: 2rem; }
     .about-photo-wrap { max-width: 220px; }
     .awards-grid { grid-template-columns: 1fr 1fr; }
+    .award-item { grid-column: auto; }
+    .award-highlight { grid-column: 1 / -1; }
     .service-grid { grid-template-columns: 1fr; }
     .works-grid { grid-template-columns: 1fr; }
     footer { flex-direction: column; gap: 1rem; text-align: center; }
@@ -650,7 +678,7 @@
     <p class="hero-label">PhD Researcher · TUM Germany &amp; SMU/NTU Singapore</p>
     <h1 class="hero-name">Hi,<br>I am <em>Huang Kai.</em><br>Welcome.</h1>
     <p class="hero-tagline">
-      Doctoral candidate at the Technical University of Munich, researching large language models for automated program repair — with a focus on multimodal software engineering.
+      Doctoral candidate at the Technical University of Munich, researching large language models for automated software repair — with a focus on multimodal software engineering and web accessibility.
     </p>
     <div class="hero-links">
       <a href="mailto:kai-kevin.huang@tum.de" class="btn btn-solid">Contact Me</a>
@@ -669,7 +697,7 @@
         <span class="stat-pill-label">Published<br>Papers</span>
       </div> -->
       <div class="stat-pill">
-        <span class="stat-pill-num">2x</span>
+        <span class="stat-pill-num">3x</span>
         <div class="stat-pill-divider"></div>
         <a class="stat-pill-label">ACM SIGSOFT<br>Distinguished</a>
       </div>
@@ -738,14 +766,36 @@
           My research interest lies in
           <a href="#" target="_blank">large language models for automated program repair (LLM4APR)</a>,
           with a particular emphasis on multimodal bug scenarios such as front-end development and
-          visualization-based interactions.
+          visualization-based interactions, as well as web accessibility repair for digital inclusion.
         </p>
         <p>
-          I have published 6 papers (5 first author, 1 co-first author) in top conferences and journals
-          including ICSE, ASE, TSE, and CSUR, and received two
-          ACM SIGSOFT Distinguished Paper Awards (ASE 2023 and ASE 2025).
+          My research centers on LLM-driven automated software repair. I have 8 research works,
+          7 of them published or accepted at CCF-A conferences and journals such as ICSE, ASE, TSE, and CSUR
+          (plus 1 preprint). Three of my first-authored works have each received an
+          <strong>ACM SIGSOFT Distinguished Paper Award</strong>:
         </p>
-        <p>Recently, I have been working on multimodal software engineering and visual reasoning for SE.</p>
+        <ul class="milestones">
+          <li>
+            <span class="milestone-year">2023</span>
+            Among the first to apply large language models of code to automated program repair
+            — <span class="milestone-award">ASE 2023 Distinguished Paper Award</span>.
+          </li>
+          <li>
+            <span class="milestone-year">2025</span>
+            Proposed <strong>GUIRepair</strong>, which repairs visual software issues through cross-modal reasoning
+            — <span class="milestone-award">ASE 2025 Distinguished Paper Award</span>.
+          </li>
+          <li>
+            <span class="milestone-year">2026</span>
+            Released <a href="https://arxiv.org/abs/2606.21926" target="_blank"><strong>A11YRepair</strong></a>
+            to advance AI-driven repair of web accessibility issues
+            — <span class="milestone-award">ASE 2026 Distinguished Paper Award</span>.
+            A11YRepair has been widely applied to real-world open-source projects: its patches have been
+            adopted by 60+ open-source projects, including those from Google, Microsoft, and IBM,
+            bringing research into practice for software maintenance and digital inclusion.
+          </li>
+        </ul>
+        <p>Recently, I have been working on multimodal software engineering, web accessibility repair, and agentic issue resolution.</p>
         <div class="highlight-box">
           👉 I am actively seeking opportunities for <strong>research collaboration</strong> and
           providing <strong>BS/MS thesis mentoring</strong> for TUM/NTU students. If you are
@@ -842,6 +892,33 @@
         </div>
       </div>
 
+      <div class="pub-item">
+        <span class="pub-num">[7]</span>
+        <div class="pub-content">
+          <p class="pub-title"><a href="https://arxiv.org/abs/2606.21926" target="_blank">A11YRepair: Bridging Web Accessibility Barriers via Knowledge-Enhanced Divide-and-Conquer Repair</a></p>
+          <p class="pub-authors"><strong>Kai Huang</strong>, Ling Zhu, Jian Zhang, Xiaofei Xie, Chunyang Chen. 2026.</p>
+          <div class="pub-venue">
+            <span class="venue-tag">ASE 2026</span>
+            <span class="badge-award">
+              <svg viewBox="0 0 10 10"><polygon points="5,1 6.2,3.8 9.5,4 7.2,6.3 8,9.5 5,7.8 2,9.5 2.8,6.3 0.5,4 3.8,3.8"/></svg>
+              ACM SIGSOFT Distinguished Paper Award
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div class="pub-item">
+        <span class="pub-num">[8]</span>
+        <div class="pub-content">
+          <p class="pub-title"><a href="https://arxiv.org/abs/2607.01929" target="_blank">Beyond Textual Repository Exploration: Dual-Modal Structural Reasoning for Agentic Issue Resolution</a></p>
+          <p class="pub-authors">Jiayi Zhang, <strong>Kai Huang‡</strong>, Yang Liu, Chunyang Chen. 2026.</p>
+          <div class="pub-venue">
+            <span class="venue-tag">arXiv 2026</span>
+            <span class="badge-cofirst">‡Corresponding Author · Preprint</span>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -869,6 +946,14 @@
           <p class="work-tag">ASE 2025 · Seoul</p>
           <span class="work-badge">TOP-1/21 Distinguished Paper</span>
           <p class="work-title">Distinguished Paper Presentation — Visual Reasoning for APR</p>
+        </div>
+      </a>
+      <a class="work-card" href="https://conf.researchr.org/home/ase-2026" target="_blank">
+        <img src="Image/ASE2026Pre.jpg" alt="ASE26 Conference presentation of A11YRepair" style="object-position: center 65%;" onerror="this.style.background='#1a1a2e'; this.style.display='block'; this.src=''">
+        <div class="work-overlay">
+          <p class="work-tag">ASE 2026 · Munich</p>
+          <span class="work-badge">Distinguished Paper</span>
+          <p class="work-title">Distinguished Paper Presentation — Web Accessibility Repair</p>
         </div>
       </a>
     </div>
@@ -921,12 +1006,17 @@
       <div class="award-item award-highlight">
         <span class="award-icon">★</span>
         <p class="award-name">ACM SIGSOFT Distinguished Paper Award</p>
-        <p class="award-detail">ASE 2025</p>
+        <p class="award-detail">ASE 2026 · A11YRepair</p>
       </div>
       <div class="award-item award-highlight">
         <span class="award-icon">★</span>
         <p class="award-name">ACM SIGSOFT Distinguished Paper Award</p>
-        <p class="award-detail">ASE 2023</p>
+        <p class="award-detail">ASE 2025 · GUIRepair</p>
+      </div>
+      <div class="award-item award-highlight">
+        <span class="award-icon">★</span>
+        <p class="award-name">ACM SIGSOFT Distinguished Paper Award</p>
+        <p class="award-detail">ASE 2023 · LLM4APR</p>
       </div>
       <div class="award-item">
         <span class="award-icon">◈</span>
@@ -959,7 +1049,7 @@
 
       <a class="mentee-card" href="https://arxiv.org/abs/2506.23100" target="_blank">
         <p class="mentee-degree">Research Paper - Repair Ingredients</p>
-        <p class="mentee-name">Jaiyi Zhang</p>
+        <p class="mentee-name">Jiayi Zhang</p>
         <p class="mentee-role">PhD Student</p>
         <p class="mentee-org">PhD at NTU</p>
       </a>
@@ -971,12 +1061,12 @@
         <p class="mentee-org">Master at TU Munich</p>
       </div>
 
-      <div class="mentee-card">
+      <a class="mentee-card" href="https://arxiv.org/abs/2606.21926" target="_blank">
         <p class="mentee-degree">MS Thesis - Web Accessibility Repair</p>
         <p class="mentee-name">Ling Zhu</p>
         <p class="mentee-role">Working on BMW Group</p>
         <p class="mentee-org">Master at TU Munich</p>
-      </div>
+      </a>
 
     </div>
   </div>
@@ -994,6 +1084,9 @@
       <div>
         <p class="service-group-label">Reviewer</p>
         <ul class="service-list">
+          <li>ICSE 2027 LLM4Code Workshop</li>
+          <li>IEEE Transactions on Reliability</li>
+          <li>Empirical Software Engineering (EMSE)</li>
           <li>Information and Software Technology</li>
           <li>The Journal of Systems &amp; Software</li>
         </ul>
