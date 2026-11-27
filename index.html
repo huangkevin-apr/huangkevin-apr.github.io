@@ -7,6 +7,7 @@
 <meta name="description" content="Huang Kai is a PhD researcher at Technical University of Munich (TUM), working on large language models for automated program repair, multimodal software engineering, and web accessibility repair.">
 <meta name="keywords" content="Huang Kai, TUM, Technical University of Munich, LLM4APR, automated program repair, multimodal software engineering, web accessibility, A11YRepair, GUIRepair">
 <meta name="author" content="Huang Kai">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%231a472a'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='16' fill='%23fff' text-anchor='middle'%3EHK%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
@@ -627,7 +628,16 @@
   .hero-links { animation: fadeUp 0.7s 0.55s ease both; }
 
   @media (max-width: 900px) {
-    nav { padding: 0 2rem; }
+    nav { padding: 0 1rem; gap: 1.25rem; }
+    .nav-logo { flex-shrink: 0; }
+    .nav-links {
+      min-width: 0; gap: 1.25rem;
+      overflow-x: auto; scrollbar-width: none;
+      -webkit-overflow-scrolling: touch;
+    }
+    .nav-links::-webkit-scrollbar { display: none; }
+    .nav-links li { flex-shrink: 0; }
+    .nav-links a { white-space: nowrap; }
     .hero { grid-template-columns: 1fr; }
     .hero-right { min-height: 50vh; }
     .hero-left { padding: 4rem 2rem; }
@@ -642,6 +652,9 @@
     .works-grid { grid-template-columns: 1fr; }
     footer { flex-direction: column; gap: 1rem; text-align: center; }
   }
+  @media (max-width: 600px) {
+    .mentoring-grid { grid-template-columns: 1fr; }
+  }
 </style>
 </head>
 <body>
@@ -653,6 +666,7 @@
     <li><a href="#about">About</a></li>
     <li><a href="#publications">Publications</a></li>
     <li><a href="#works">Works</a></li>
+    <li><a href="#talks">Talks</a></li>
     <li><a href="#awards">Awards</a></li>
     <li><a href="#mentoring">Students</a></li>
     <li><a href="#service">Service</a></li>
@@ -688,7 +702,7 @@
 
   <div class="hero-right">
     <div class="hero-photo-wrap">
-      <img class="hero-photo" src="personal_bg3.png" alt="Huang Kai presenting at conference">
+      <img class="hero-photo" src="Image/web/personal_bg3.jpg" alt="Huang Kai presenting at conference">
     </div>
     <div class="hero-stats-overlay">
       <!-- <div class="stat-pill">
@@ -699,7 +713,7 @@
       <div class="stat-pill">
         <span class="stat-pill-num">3x</span>
         <div class="stat-pill-divider"></div>
-        <a class="stat-pill-label">ACM SIGSOFT<br>Distinguished</a>
+        <span class="stat-pill-label">ACM SIGSOFT<br>Distinguished</span>
       </div>
       <div class="stat-pill">
         <span class="stat-pill-num">1x</span>
@@ -721,7 +735,7 @@
     <div class="about-grid">
       <div class="about-photo-wrap">
         <div class="about-photo">
-          <img src="personal_1.png" alt="Huang Kai" onerror="this.style.display='none'; this.parentElement.innerHTML='<span style=\'font-size:13px;color:var(--ink3)\'>Photo</span>'">
+          <img src="Image/web/personal_1.jpg" loading="lazy" alt="Huang Kai" onerror="this.style.display='none'; this.parentElement.innerHTML='<span style=\'font-size:13px;color:var(--ink3)\'>Photo</span>'">
         </div>
         <p class="photo-caption">Huang Kai @TUM</p>
         <p class="photo-caption">Technical University of Munich</p>
@@ -732,7 +746,7 @@
             <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 4H4C2.9 4 2 4.9 2 6v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
           </a>
           <!-- Google Scholar -->
-          <a href="https://scholar.google.com/citations?user=YOUR_ID&user=9n6V8sAAAAAJ" target="_blank" class="social-btn" title="Google Scholar">
+          <a href="https://scholar.google.com/citations?user=9n6V8sAAAAAJ" target="_blank" class="social-btn" title="Google Scholar">
             <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.838 3.94A8 8 0 0 1 12 10a8 8 0 0 1 7.162 3.44L24 9.5 12 0z"/></svg>
           </a>
           <!-- LinkedIn -->
@@ -764,15 +778,14 @@
         </p>
         <p>
           My research interest lies in
-          <a href="#" target="_blank">large language models for automated program repair (LLM4APR)</a>,
+          <a href="#publications">large language models for automated program repair (LLM4APR)</a>,
           with a particular emphasis on multimodal bug scenarios such as front-end development and
           visualization-based interactions, as well as web accessibility repair for digital inclusion.
         </p>
         <p>
-          My research centers on LLM-driven automated software repair. I have 8 research works,
-          7 of them published or accepted at CCF-A conferences and journals such as ICSE, ASE, TSE, and CSUR
-          (plus 1 preprint). Three of my first-authored works have each received an
-          <strong>ACM SIGSOFT Distinguished Paper Award</strong>:
+          My research centers on LLM-driven automated software repair, with 8 research works published in
+          CCF-A conferences and journals such as ICSE, ASE, and TSE. Three of my first-authored works have each
+          received an <strong>ACM SIGSOFT Distinguished Paper Award</strong>:
         </p>
         <ul class="milestones">
           <li>
@@ -914,7 +927,7 @@
           <p class="pub-authors">Jiayi Zhang, <strong>Kai Huang‡</strong>, Yang Liu, Chunyang Chen. 2026.</p>
           <div class="pub-venue">
             <span class="venue-tag">arXiv 2026</span>
-            <span class="badge-cofirst">‡Corresponding Author · Preprint</span>
+            <span class="badge-cofirst">‡Corresponding Author</span>
           </div>
         </div>
       </div>
@@ -933,7 +946,7 @@
     </div>
     <div class="works-grid">
       <a class="work-card" href="https://conf.researchr.org/home/ase-2023" target="_blank">
-        <img src="ASE23.jpg" href="" alt="ASE23 Conference presentation" onerror="this.style.background='var(--paper3)'; this.style.display='block'; this.src=''">
+        <img src="Image/web/ASE23.jpg" loading="lazy" alt="ASE23 Conference presentation" onerror="this.style.background='var(--paper3)'; this.style.display='block'; this.src=''">
         <div class="work-overlay">
           <p class="work-tag">ASE 2023 · Luxembourg</p>
           <span class="work-badge">TOP-1/10 Distinguished Paper</span>
@@ -941,7 +954,7 @@
         </div>
       </a>
       <a class="work-card" href="https://conf.researchr.org/track/ase-2025/ase-2025-papers#event-overview" target="_blank">
-        <img src="ASE2025Pre.png" alt="ASE25 Conference presentation" onerror="this.style.background='#1a1a2e'; this.style.display='block'; this.src=''">
+        <img src="Image/web/ASE2025Pre.jpg" loading="lazy" alt="ASE25 Conference presentation" onerror="this.style.background='#1a1a2e'; this.style.display='block'; this.src=''">
         <div class="work-overlay">
           <p class="work-tag">ASE 2025 · Seoul</p>
           <span class="work-badge">TOP-1/21 Distinguished Paper</span>
@@ -949,10 +962,10 @@
         </div>
       </a>
       <a class="work-card" href="https://conf.researchr.org/home/ase-2026" target="_blank">
-        <img src="Image/ASE2026Pre.jpg" alt="ASE26 Conference presentation of A11YRepair" style="object-position: center 65%;" onerror="this.style.background='#1a1a2e'; this.style.display='block'; this.src=''">
+        <img src="Image/web/ASE2026Pre.jpg" loading="lazy" alt="ASE26 Conference presentation of A11YRepair" style="object-position: center 65%;" onerror="this.style.background='#1a1a2e'; this.style.display='block'; this.src=''">
         <div class="work-overlay">
           <p class="work-tag">ASE 2026 · Munich</p>
-          <span class="work-badge">Distinguished Paper</span>
+          <span class="work-badge">TOP-1/24 Distinguished Paper</span>
           <p class="work-title">Distinguished Paper Presentation — Web Accessibility Repair</p>
         </div>
       </a>
@@ -974,21 +987,21 @@
           <p class="talk-org">JetBrains Research</p>
           <p class="talk-title">Multimodal LLMs for Visual Software Issue Repair</p>
         </div>
-        <a href="https://www.jetbrains.com/research/" class="talk-link">View ↗</a>
+        <a href="https://www.jetbrains.com/research/" target="_blank" rel="noopener" class="talk-link">View ↗</a>
       </div>
       <div class="talk-item">
         <div>
           <p class="talk-org">Moonshot AI</p>
           <p class="talk-title">Seeing is Fixing: Cross-Modal Reasoning with Multimodal LLMs for Visual Software Issue Repair</p>
         </div>
-        <a href="https://www.moonshot.ai/" class="talk-link">View ↗</a>
+        <a href="https://www.moonshot.ai/" target="_blank" rel="noopener" class="talk-link">View ↗</a>
       </div>
       <div class="talk-item">
         <div>
           <p class="talk-org">TruX @ University of Luxembourg</p>
           <p class="talk-title">Fine-tuning Large Language Models of Code for Automated Program Repair</p>
         </div>
-        <a href="https://www.uni.lu/snt-en/research-groups/trux/" class="talk-link">View ↗</a>
+        <a href="https://www.uni.lu/snt-en/research-groups/trux/" target="_blank" rel="noopener" class="talk-link">View ↗</a>
       </div>
     </div>
   </div>
@@ -1064,7 +1077,7 @@
       <a class="mentee-card" href="https://arxiv.org/abs/2606.21926" target="_blank">
         <p class="mentee-degree">MS Thesis - Web Accessibility Repair</p>
         <p class="mentee-name">Ling Zhu</p>
-        <p class="mentee-role">Working on BMW Group</p>
+        <p class="mentee-role">Working at BMW Group</p>
         <p class="mentee-org">Master at TU Munich</p>
       </a>
 
