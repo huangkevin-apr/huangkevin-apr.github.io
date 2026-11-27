@@ -512,11 +512,10 @@
   /* ── AWARDS ── */
   #awards { background: var(--paper); }
   .awards-grid {
-    display: grid; grid-template-columns: repeat(12, 1fr);
+    display: grid; grid-template-columns: repeat(3, 1fr);
     gap: 2px;
   }
   .award-item {
-    grid-column: span 3;
     background: var(--paper2);
     padding: 1.75rem;
   }
@@ -534,7 +533,7 @@
     letter-spacing: 0.05em;
   }
   .award-highlight .award-name { color: var(--gold); }
-  .award-highlight { grid-column: span 4; border-top: 2px solid var(--gold); }
+  .award-highlight { border-top: 2px solid var(--gold); }
 
   /* ── MENTORING ── */
   #mentoring { background: var(--paper); }
@@ -646,8 +645,8 @@
     .about-grid { grid-template-columns: 1fr; gap: 2rem; }
     .about-photo-wrap { max-width: 220px; }
     .awards-grid { grid-template-columns: 1fr 1fr; }
-    .award-item { grid-column: auto; }
     .award-highlight { grid-column: 1 / -1; }
+    .award-item:not(.award-highlight):last-child:nth-child(even) { grid-column: 1 / -1; }
     .service-grid { grid-template-columns: 1fr; }
     .works-grid { grid-template-columns: 1fr; }
     footer { flex-direction: column; gap: 1rem; text-align: center; }
@@ -949,7 +948,7 @@
         <img src="Image/web/ASE23.jpg" loading="lazy" alt="ASE23 Conference presentation" onerror="this.style.background='var(--paper3)'; this.style.display='block'; this.src=''">
         <div class="work-overlay">
           <p class="work-tag">ASE 2023 · Luxembourg</p>
-          <span class="work-badge">TOP-1/10 Distinguished Paper</span>
+          <span class="work-badge">ACM Distinguished Paper</span>
           <p class="work-title">Distinguished Paper Presentation — Fine-tuning LLM for APR</p>
         </div>
       </a>
@@ -957,7 +956,7 @@
         <img src="Image/web/ASE2025Pre.jpg" loading="lazy" alt="ASE25 Conference presentation" onerror="this.style.background='#1a1a2e'; this.style.display='block'; this.src=''">
         <div class="work-overlay">
           <p class="work-tag">ASE 2025 · Seoul</p>
-          <span class="work-badge">TOP-1/21 Distinguished Paper</span>
+          <span class="work-badge">ACM Distinguished Paper</span>
           <p class="work-title">Distinguished Paper Presentation — Visual Reasoning for APR</p>
         </div>
       </a>
@@ -965,7 +964,7 @@
         <img src="Image/web/ASE2026Pre.jpg" loading="lazy" alt="ASE26 Conference presentation of A11YRepair" style="object-position: center 65%;" onerror="this.style.background='#1a1a2e'; this.style.display='block'; this.src=''">
         <div class="work-overlay">
           <p class="work-tag">ASE 2026 · Munich</p>
-          <span class="work-badge">TOP-1/24 Distinguished Paper</span>
+          <span class="work-badge">ACM Distinguished Paper</span>
           <p class="work-title">Distinguished Paper Presentation — Web Accessibility Repair</p>
         </div>
       </a>
